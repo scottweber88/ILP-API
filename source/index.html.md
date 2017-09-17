@@ -2,238 +2,479 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
-
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - json
 
 includes:
   - errors
+
 
 search: true
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the ILP API! 
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
+# Register
 
-> To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+> On success the API returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+{
+  "status": "success",
+  "data": {
+    "token": "f4kJs(Hmzys3G9)%sObCZXEkz-7IpVNZ",
+    "name": "Jason"
   }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
 }
 ```
 
-This endpoint retrieves a specific kitten.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+> On error the API returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  "status": "failure",
+  "errors": {
+    "name": [
+      "The name field is required."
+    ],
+    "email": [
+      "The email field is required."
+    ],
+    "password": [
+      "The password field is required."
+    ],
+    "gender": [
+      "The gender field is required."
+    ],
+    "dob": [
+      "The dob field is required."
+    ],
+    "indigenous": [
+      "The indigenous field is required."
+    ],
+    "postcode": [
+      "The postcode field is required."
+    ]
+  }
 }
 ```
-
-This endpoint retrieves a specific kitten.
+This endpoint retrieves the authentication token and users name.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`POST [API URL]/api/v1/register`
 
-### URL Parameters
+### POST Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+name      | string     | True    | `Verna` | 
+email  | string     | True     | `Verna@email.com` |
+password  | string     | True     | `Ve73lxU90rZx` | 
+gender  | string     | True     | `female` |
+dob  | date     | True     | `1972-06-29` |
+postcode  | int     | True     | `5001` | 
+indigenous  | bool     | True     | `True`| 
+attributes  | array     | False     | See [attributes](#attributes)  | 
+
+
+
+
+# Login
+
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+    "token": "f4kJs(Hmzys3G9)%sObCZXEkz-7IpVNZ",
+    "name": "Jason"
+  }
+}
+```
+
+This endpoint retrieves the authentication token and users name.
+
+### HTTP Request
+
+`POST [API URL]/api/v1/auth`
+
+### POST Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Languages
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+# Core 
+
+## Phrases
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+## Classrooms
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+## Dictionary
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+## Dreaming stories
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+## Language primer
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+AKA: basics, welcome, 101
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+# Games
+
+## Get the game leaderboard
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+## Check for a game
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+
+## Get game activities
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+
+## Submit a score
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`POST [API URL]/api/v1/auth`
+
+### POST Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+# Get a resource
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+# Password reset 
+
+## Request password reset
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+## Reset password
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v1/auth`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `Verna@email.com` | 
+password      | string     | True    | `Ve73lxU90rZx` | 
+
 
