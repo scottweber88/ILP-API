@@ -5,7 +5,16 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - json
 
 includes:
-  - errors
+  - activity_types
+  - activity_reading
+  - activity_writing
+  - activity_hotspot
+  - activity_conversation
+  - activity_song
+  - activity_video
+  - activity_word_to_picture_matching
+  - activity_picture_to_word_matching
+  - activity_word_matching
 
 
 search: true
@@ -67,7 +76,7 @@ This endpoint retrieves the authentication token and users name.
 
 ### HTTP Request
 
-`POST [API URL]/api/v1/register`
+`POST [API URL]/api/v2/register`
 
 ### POST Parameters
 
@@ -104,7 +113,7 @@ This endpoint retrieves the authentication token and users name.
 
 ### HTTP Request
 
-`POST [API URL]/api/v1/auth`
+`POST [API URL]/api/v2/auth`
 
 ### POST Parameters
 
@@ -150,7 +159,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -177,7 +186,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -193,17 +202,45 @@ password      | string     | True    | `Ve73lxU90rZx` |
 
 ```json
 {
-  "status": "success",
-  "data": {
-  }
-}
+    "data": [
+        {
+            "id": 38,
+            "name": "Adrians Classroom - Year 2",
+            "year_level": "Foundation to Year 2",
+            "topic": {
+                "data": []
+            },
+            "teacher": {
+                "data": {
+                    "id": 130,
+                    "name": "Adrian Barr",
+                    "email": "ABarr@musicaviva.com.au"
+                }
+            },
+            "school": {
+                "data": {
+                    "id": 3,
+                    "name": "Murray Bridge - South School",
+                    "language": {
+                        "data": {
+                            "id": 1,
+                            "language": "Ngarrindjeri",
+                            "shortcode": "nga",
+                            "timezone": "Australia/Adelaide",
+                            "greeting": "Nguldi arndu"
+                        }
+                    }
+                }
+            }
+        },
+        ...
 ```
 
 This endpoint 
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -229,7 +266,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -255,7 +292,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -282,7 +319,7 @@ AKA: basics, welcome, 101
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -309,7 +346,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -335,7 +372,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -362,7 +399,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -389,7 +426,7 @@ This endpoint
 
 ### HTTP Request
 
-`POST [API URL]/api/v1/auth`
+`POST [API URL]/api/v2/auth`
 
 ### POST Parameters
 
@@ -415,7 +452,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -442,7 +479,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
@@ -468,7 +505,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v1/auth`
+`GET [API URL]/api/v2/auth`
 
 ### Parameters
 
