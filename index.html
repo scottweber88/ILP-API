@@ -6,7 +6,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>API Reference</title>
-
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <style>
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
@@ -350,6 +350,11 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the ILP API! </p>
+
+<aside class="notice">
+This documentation is currently under construction. <br><br>
+Some parts may be incomplete, outdated or missing entirely but every effort is being made to keep them up-to-date and complete.
+</aside>
 <h1 id='register'>Register</h1>
 <blockquote>
 <p>On success the API returns JSON structured like this:</p>
@@ -913,17 +918,10 @@ AKA: basics, welcome, 101</p>
 </tbody></table>
 <h1 id='get-a-resource'>Get a resource</h1>
 <blockquote>
-<p>The API returns JSON structured like this:</p>
+<p>The API returns the file requested</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint </p>
 <h3 id='http-request-13'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/auth</code></p>
+<p><code>GET [API URL]/api/v2/resource/view/[ResourceID]</code></p>
 <h3 id='parameters-10'>Parameters</h3>
 <table><thead>
 <tr>
@@ -935,18 +933,11 @@ AKA: basics, welcome, 101</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>email</td>
-<td>string</td>
-<td>True</td>
-<td><code>Verna@email.com</code></td>
-<td></td>
-</tr>
-<tr>
-<td>password</td>
-<td>string</td>
-<td>True</td>
-<td><code>Ve73lxU90rZx</code></td>
-<td></td>
+<td>size</td>
+<td>integer</td>
+<td>False</td>
+<td><code>100</code></td>
+<td>If the resource is an image, resize it based on width</td>
 </tr>
 </tbody></table>
 <h1 id='password-reset'>Password reset</h1><h2 id='request-password-reset'>Request password reset</h2>
@@ -1030,55 +1021,49 @@ AKA: basics, welcome, 101</p>
 <tr>
 <th>Type</th>
 <th>Code</th>
-<th>Info</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Writing</td>
 <td>writing</td>
-<td></td>
 </tr>
 <tr>
 <td>Reading</td>
 <td>reading</td>
-<td></td>
 </tr>
 <tr>
 <td>Hot spot</td>
 <td>mapping</td>
-<td></td>
 </tr>
 <tr>
 <td>Picture to Word matching</td>
 <td>picture_matching</td>
-<td></td>
 </tr>
 <tr>
 <td>Word to Picture Matching</td>
 <td>word_to_picture_matching</td>
-<td></td>
 </tr>
 <tr>
 <td>Word matching</td>
 <td>word_matching</td>
-<td></td>
 </tr>
 <tr>
 <td>Conversations</td>
 <td>conversation</td>
-<td></td>
 </tr>
 <tr>
 <td>Video</td>
 <td>video</td>
-<td></td>
 </tr>
 <tr>
 <td>Song</td>
 <td>song</td>
-<td></td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+The hot spot activity was originally called mapping but it was too confusing for users, so it's display name is "hot spot" but the back end calls it mapping.
+</aside>
 <h1 id='activity-reading'>Activity - Reading</h1><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">281</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reading"</span><span class="p">,</span><span class="w">
@@ -1113,15 +1098,14 @@ AKA: basics, welcome, 101</p>
     </span><span class="s2">"activityData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"Victor Harbour"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"@1080"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">198</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">388</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="s2">"@original"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">194</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Victor Harbour"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"@1080"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">198</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">388</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"@original"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">194</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="err">...</span><span class="w">
@@ -1141,7 +1125,7 @@ AKA: basics, welcome, 101</p>
             </span><span class="s2">"vimeoURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
-</span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='activity-conversation'>Activity - Conversation</h1><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">279</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conversation"</span><span class="p">,</span><span class="w">
@@ -1224,7 +1208,7 @@ AKA: basics, welcome, 101</p>
             </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10120</span><span class="p">,</span><span class="w">
