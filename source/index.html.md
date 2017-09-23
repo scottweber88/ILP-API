@@ -25,6 +25,10 @@ search: true
 Welcome to the ILP API! 
 
 
+<aside class="notice">
+This documentation is currently under construction. <br><br>
+Some parts may be incomplete, outdated or missing entirely but every effort is being made to keep them up-to-date and complete.
+</aside>
 
 # Register
 
@@ -438,28 +442,19 @@ password      | string     | True    | `Ve73lxU90rZx` |
 
 # Get a resource
 
-> The API returns JSON structured like this:
+> The API returns the file requested
 
-```json
-{
-  "status": "success",
-  "data": {
-  }
-}
-```
 
-This endpoint 
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v2/resource/view/[ResourceID]`
 
 ### Parameters
 
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
-email      | string     | True    | `Verna@email.com` | 
-password      | string     | True    | `Ve73lxU90rZx` | 
+size      | integer     | False    | `100` | If the resource is an image, resize it based on width  
 
 # Password reset 
 

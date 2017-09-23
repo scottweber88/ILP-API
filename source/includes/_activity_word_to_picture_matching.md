@@ -11,7 +11,7 @@
             "answer": 3
         }
     },
-    "resource": {
+    "resources": {
         "data": [
             {
                 "id": 10120,

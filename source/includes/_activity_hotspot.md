@@ -9,15 +9,14 @@
     "activityData": {
         "data": [
             {
-                "Victor Harbour": {
-                    "@1080": {
-                        "x": 198,
-                        "y": 388
-                    },
-                    "@original": {
-                        "x": 99,
-                        "y": 194
-                    }
+                "title": "Victor Harbour",
+                "@1080": {
+                    "x": 198,
+                    "y": 388
+                },
+                "@original": {
+                    "x": 99,
+                    "y": 194
                 }
             },
             ...
@@ -37,5 +36,5 @@
             "vimeoURL": null
         }
     }
-},
+}
 ```
