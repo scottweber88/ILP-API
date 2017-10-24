@@ -163,7 +163,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v2/language`
 
 ### Parameters
 
@@ -190,7 +190,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v2/phrase`
 
 ### Parameters
 
@@ -244,7 +244,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v2/classroom`
 
 ### Parameters
 
@@ -270,7 +270,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v2/dictionary/update`
 
 ### Parameters
 
@@ -296,7 +296,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v2/stories`
 
 ### Parameters
 
@@ -312,9 +312,21 @@ password      | string     | True    | `Ve73lxU90rZx` |
 
 ```json
 {
-  "status": "success",
-  "data": {
-  }
+  "data": [
+    {
+      "id": 29,
+      "title": "00 Acknowledgements and contributors",
+      "content": "",
+      "resource_id": 10325
+    },
+    {
+      "id": 25,
+      "title": "01 Tribute to Eileen McHughes: Katjeri Yailini-ambi",
+      "content": "",
+      "resource_id": 10685
+    },
+    ...
+  ]
 }
 ```
 
@@ -323,7 +335,7 @@ AKA: basics, welcome, 101
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v2/primer`
 
 ### Parameters
 
@@ -376,7 +388,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v2/games/current`
 
 ### Parameters
 
@@ -403,7 +415,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v2/games/current`
 
 ### Parameters
 
@@ -430,7 +442,7 @@ This endpoint
 
 ### HTTP Request
 
-`POST [API URL]/api/v2/auth`
+`POST [API URL]/api/v2/games/score`
 
 ### POST Parameters
 
@@ -464,9 +476,7 @@ size      | integer     | False    | `100` | If the resource is an image, resize
 
 ```json
 {
-  "status": "success",
-  "data": {
-  }
+  "status":"passwords.sent"
 }
 ```
 
@@ -474,14 +484,13 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`POST [API URL]/api/v2/password/forgot`
 
 ### Parameters
 
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
 email      | string     | True    | `Verna@email.com` | 
-password      | string     | True    | `Ve73lxU90rZx` | 
 
 
 ## Reset password
@@ -500,7 +509,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`POST [API URL]/api/v2/password/forgot`
 
 ### Parameters
 
