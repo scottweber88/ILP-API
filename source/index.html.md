@@ -470,6 +470,48 @@ size      | integer     | False    | `100` | If the resource is an image, resize
 }
 ```
 
+
+
+
+# Upload a resource
+
+> The API returns a signed S3 url
+
+
+```json
+{
+  "status": "success",
+  "data": {
+    "signed_url": "",
+    "method": "PUT"
+  }
+}
+```
+
+### HTTP Request
+
+`GET [API URL]/api/v2/resource/upload/`
+
+### Parameters
+
+None
+
+
+# Password reset 
+
+## Request password reset
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "status": "success",
+  "data": {
+  }
+}
+```
+
+
 This endpoint 
 
 ### HTTP Request
