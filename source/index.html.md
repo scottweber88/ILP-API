@@ -206,38 +206,186 @@ password      | string     | True    | `Ve73lxU90rZx` |
 
 ```json
 {
-    "data": [
-        {
-            "id": 38,
-            "name": "Adrians Classroom - Year 2",
-            "year_level": "Foundation to Year 2",
-            "topic": {
-                "data": []
-            },
-            "teacher": {
-                "data": {
-                    "id": 130,
-                    "name": "Adrian Barr",
-                    "email": "ABarr@musicaviva.com.au"
-                }
-            },
-            "school": {
-                "data": {
-                    "id": 3,
-                    "name": "Murray Bridge - South School",
-                    "language": {
-                        "data": {
-                            "id": 1,
-                            "language": "Ngarrindjeri",
-                            "shortcode": "nga",
-                            "timezone": "Australia/Adelaide",
-                            "greeting": "Nguldi arndu"
+	"data": [
+		{
+			"id": 49,
+			"name": "Kainggi Thunggari Prap",
+			"year_level": "Years 3 to 6",
+			"topic": {
+				"data": [
+					{
+						"id": 79,
+						"title": "01 Greeting people",
+						"description": "Greetings",
+						"resource_id": 10741,
+						"activities": {
+							"data": [
+								{
+									"id": 401,
+									"type": "word_matching",
+									"title": "Greeting people",
+									"activityData": {
+										"data": {
+											"word": "Nginti nankeri?",
+											"words": [
+												"Is he good?",
+												"Are you good?",
+												"Good day",
+												"",
+												""
+											],
+											"answer": 1
+										}
+									}
+								},
+								{
+									"id": 403,
+									"type": "word_matching",
+									"title": "Greeting people",
+									"activityData": {
+										"data": {
+											"word": "Ngurli nankeri?",
+											"words": [
+												"Are you all good?",
+												"Good night",
+												"Are you two good?",
+												"",
+												""
+											],
+											"answer": 2
+										}
+									}
+								},
+								...
+							]
+						},
+						"resource": {
+							"data": {
+								"id": 10741,
+								"title": "INSERT 5 PHOTO for back of insert P1040884",
+								"original_name": "INSERT 5 PHOTO for back of insert P1040884",
+								"name": "f2eb869b-e80d-47fa-a322-428638ab4fe6.jpg",
+								"type": "image",
+								"thumbnail": null,
+								"speaker": null,
+								"copyright": null,
+								"notes": null,
+								"vimeoURL": null
+							}
+						},
+                         "associatedWords": {
+                            "data": [
+                                {
+                                    "id": 1830,
+                                    "language_id": 1,
+                                    "word": "buning",
+                                    "alt": "ngamat; yuwuntal",
+                                    "word_class": "Noun",
+                                    "english_word": "Hooded dotterel (a bird species)",
+                                    "example": null,
+                                    "category": "birds",
+                                    "comments": "",
+                                    "created_at": 1489985508,
+                                    "updated_at": 1508702915,
+                                    "deleted_at": 0,
+                                    "recordings": {
+                                        "data": {
+                                            "male": {
+                                                "data": {
+                                                    "id": 7893,
+                                                    "title": "buning; ngamat; yuwuntal - male",
+                                                    "original_name": "buning; ngamat; yuwuntal - male",
+                                                    "name": "30e2867c-3498-4681-86ee-b02b93bdf871.wav",
+                                                    "type": "sound",
+                                                    "thumbnail": null,
+                                                    "speaker": null,
+                                                    "copyright": null,
+                                                    "notes": null,
+                                                    "vimeoURL": null
+                                                }
+                                            },
+                                            "female": {
+                                                "data": {
+                                                    "id": 8067,
+                                                    "title": "buning; ngamat; yuwuntal - female",
+                                                    "original_name": "buning; ngamat; yuwuntal - female",
+                                                    "name": "7d60d6d5-13d4-4b1e-9fe6-041444da1638.mp4",
+                                                    "type": "sound",
+                                                    "thumbnail": null,
+                                                    "speaker": null,
+                                                    "copyright": null,
+                                                    "notes": null,
+                                                    "vimeoURL": null
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": 2725,
+                                    "language_id": 1,
+                                    "word": "kalu",
+                                    "alt": "keiwuki",
+                                    "word_class": "Noun",
+                                    "english_word": "Night bird",
+                                    "example": null,
+                                    "category": "birds",
+                                    "comments": "",
+                                    "created_at": 1489985508,
+                                    "updated_at": 1508702917,
+                                    "deleted_at": 0,
+                                    "recordings": {
+                                        "data": {
+                                            "female": {
+                                                "data": {
+                                                    "id": 7836,
+                                                    "title": "kalu; keiwuki - female",
+                                                    "original_name": "kalu; keiwuki - female",
+                                                    "name": "ab5659dd-c6cd-4988-b7f8-c528ac6fbd56.wav",
+                                                    "type": "sound",
+                                                    "thumbnail": null,
+                                                    "speaker": null,
+                                                    "copyright": null,
+                                                    "notes": null,
+                                                    "vimeoURL": null
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
                         }
-                    }
-                }
-            }
-        },
-        ...
+					},
+					...
+				]
+			},
+			"teacher": {
+				"data": {
+					"id": 1,
+					"title": "Auntie",
+					"first_name": "Phyllis Williams",
+					"last_name": "",
+					"email": ""
+				}
+			},
+			"school": {
+				"data": {
+					"id": 31,
+					"name": "Kainggi Thunggari Prap",
+					"language": {
+						"data": {
+							"id": 1,
+							"language": "Ngarrindjeri",
+							"shortcode": "nga",
+							"timezone": "Australia\/Adelaide",
+							"greeting": "Nguldi arndu"
+						}
+					}
+				}
+			}
+		}
+	]
+}					
 ```
 
 This endpoint 
@@ -278,6 +426,184 @@ Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
 email      | string     | True    | `Verna@email.com` | 
 password      | string     | True    | `Ve73lxU90rZx` | 
+
+
+## Topics
+
+> The API returns JSON structured like this:
+
+```json
+{
+	"data": [
+		{
+			"id": 81,
+			"title": "Farewelling people",
+			"description": "",
+			"resource_id": 99,
+			"activities": {
+				"data": [
+					{
+						"id": 455,
+						"type": "word_matching",
+						"title": "Farewelling people",
+						"activityData": {
+							"data": {
+								"word": "Nakan ya",
+								"words": [
+									"Good night",
+									"I am going",
+									"See you later",
+									"",
+									""
+								],
+								"answer": 2
+							}
+						}
+					},
+					{
+						"id": 457,
+						"type": "word_matching",
+						"title": "Farewelling people",
+						"activityData": {
+							"data": {
+								"word": "Nakan ngum",
+								"words": [
+									"Nakan lom",
+									"See you later",
+									"Nakan nom",
+									"",
+									""
+								],
+								"answer": 1
+							}
+						}
+					},
+					...
+				]
+			},
+			"resource": {
+				"data": {
+					"id": 99,
+					"title": "Image 1",
+					"original_name": "Image 1",
+					"name": "cb5ed22886d4715659424732b.jpg",
+					"type": "image",
+					"thumbnail": null,
+					"speaker": null,
+					"copyright": null,
+					"notes": null,
+					"vimeoURL": null
+				}
+			},
+			"associatedWords": {
+				"data": [
+					{
+						"id": 1830,
+						"language_id": 1,
+						"word": "buning",
+						"alt": "ngamat; yuwuntal",
+						"word_class": "Noun",
+						"english_word": "Hooded dotterel (a bird species)",
+						"example": null,
+						"category": "birds",
+						"comments": "",
+						"created_at": 1489985508,
+						"updated_at": 1508702915,
+						"deleted_at": 0,
+						"recordings": {
+							"data": {
+								"male": {
+									"data": {
+										"id": 7893,
+										"title": "buning; ngamat; yuwuntal - male",
+										"original_name": "buning; ngamat; yuwuntal - male",
+										"name": "30e2867c-3498-4681-86ee-b02b93bdf871.wav",
+										"type": "sound",
+										"thumbnail": null,
+										"speaker": null,
+										"copyright": null,
+										"notes": null,
+										"vimeoURL": null
+									}
+								},
+								"female": {
+									"data": {
+										"id": 8067,
+										"title": "buning; ngamat; yuwuntal - female",
+										"original_name": "buning; ngamat; yuwuntal - female",
+										"name": "7d60d6d5-13d4-4b1e-9fe6-041444da1638.mp4",
+										"type": "sound",
+										"thumbnail": null,
+										"speaker": null,
+										"copyright": null,
+										"notes": null,
+										"vimeoURL": null
+									}
+								}
+							}
+						}
+					},
+					{
+						"id": 2725,
+						"language_id": 1,
+						"word": "kalu",
+						"alt": "keiwuki",
+						"word_class": "Noun",
+						"english_word": "Night bird",
+						"example": null,
+						"category": "birds",
+						"comments": "",
+						"created_at": 1489985508,
+						"updated_at": 1508702917,
+						"deleted_at": 0,
+						"recordings": {
+							"data": {
+								"female": {
+									"data": {
+										"id": 7836,
+										"title": "kalu; keiwuki - female",
+										"original_name": "kalu; keiwuki - female",
+										"name": "ab5659dd-c6cd-4988-b7f8-c528ac6fbd56.wav",
+										"type": "sound",
+										"thumbnail": null,
+										"speaker": null,
+										"copyright": null,
+										"notes": null,
+										"vimeoURL": null
+									}
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	],
+	"meta": {
+		"pagination": {
+			"total": 1,
+			"count": 1,
+			"per_page": 50,
+			"current_page": 1,
+			"total_pages": 1,
+			"links": []
+		}
+	}
+}
+```
+
+This endpoint 
+
+### HTTP Request
+
+`GET [API URL]/api/v2/topics`
+
+### Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+topic      | int     | True    | `1` | 
+languageID      | int     | True    | `81` | 
 
 
 ## Dreaming stories
