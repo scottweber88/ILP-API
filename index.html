@@ -258,9 +258,6 @@
             <a href="#core" class="toc-h1 toc-link" data-title="Core">Core</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#phrases" class="toc-h2 toc-link" data-title="Core">Phrases</a>
-                  </li>
-                  <li>
                     <a href="#classrooms" class="toc-h2 toc-link" data-title="Core">Classrooms</a>
                   </li>
                   <li>
@@ -298,10 +295,10 @@
             <a href="#get-a-resource" class="toc-h1 toc-link" data-title="Get a resource">Get a resource</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request-14" class="toc-h2 toc-link" data-title="Get a resource">HTTP Request</a>
+                    <a href="#http-request-13" class="toc-h2 toc-link" data-title="Get a resource">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#parameters-11" class="toc-h2 toc-link" data-title="Get a resource">Parameters</a>
+                    <a href="#parameters-10" class="toc-h2 toc-link" data-title="Get a resource">Parameters</a>
                   </li>
               </ul>
           </li>
@@ -317,10 +314,10 @@
             <a href="#upload-a-resource" class="toc-h1 toc-link" data-title="Upload a resource">Upload a resource</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request-15" class="toc-h2 toc-link" data-title="Upload a resource">HTTP Request</a>
+                    <a href="#http-request-14" class="toc-h2 toc-link" data-title="Upload a resource">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#parameters-12" class="toc-h2 toc-link" data-title="Upload a resource">Parameters</a>
+                    <a href="#post-parameters-4" class="toc-h2 toc-link" data-title="Upload a resource">POST Parameters</a>
                   </li>
               </ul>
           </li>
@@ -364,6 +361,9 @@
           </li>
           <li>
             <a href="#activity-word-matching" class="toc-h1 toc-link" data-title="Activity - Word Matching">Activity - Word Matching</a>
+          </li>
+          <li>
+            <a href="#entity-types" class="toc-h1 toc-link" data-title="Entity types">Entity types</a>
           </li>
       </div>
     </div>
@@ -421,7 +421,7 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
 </span></code></pre>
 <p>This endpoint retrieves the authentication token and users name.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST [API URL]/api/v2/register</code></p>
+<p><code>POST [API URL]/api/v3/register</code></p>
 <h3 id='post-parameters'>POST Parameters</h3>
 <table><thead>
 <tr>
@@ -433,10 +433,24 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
 </tr>
 </thead><tbody>
 <tr>
-<td>name</td>
+<td>title</td>
+<td>string</td>
+<td>True</td>
+<td><code>Aunti</code></td>
+<td></td>
+</tr>
+<tr>
+<td>first_name</td>
 <td>string</td>
 <td>True</td>
 <td><code>Verna</code></td>
+<td></td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>string</td>
+<td>True</td>
+<td><code>Creswell</code></td>
 <td></td>
 </tr>
 <tr>
@@ -497,13 +511,15 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f4kJs(Hmzys3G9)%sObCZXEkz-7IpVNZ"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jason"</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tsar"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jason"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Millward"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the authentication token and users name.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST [API URL]/api/v2/auth</code></p>
+<p><code>POST [API URL]/api/v3/auth</code></p>
 <h3 id='post-parameters-2'>POST Parameters</h3>
 <table><thead>
 <tr>
@@ -534,14 +550,41 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
 <p>The API returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ngarrindjeri"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shortcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nga"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australia</span><span class="se">\/</span><span class="s2">Adelaide"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"greeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nguldi arndu"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yugambeh"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shortcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yug"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australia</span><span class="se">\/</span><span class="s2">Brisbane"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"greeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jingeri"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gunggari"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shortcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gun"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australia</span><span class="se">\/</span><span class="s2">Brisbane"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"greeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yowala"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yalnun An'gabah"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shortcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australia</span><span class="se">\/</span><span class="s2">Brisbane"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"greeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jingeri"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/language</code></p>
+<p><code>GET [API URL]/api/v3/language</code></p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
 <tr>
@@ -567,45 +610,7 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
 <td></td>
 </tr>
 </tbody></table>
-<h1 id='core'>Core</h1><h2 id='phrases'>Phrases</h2>
-<blockquote>
-<p>The API returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint </p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/phrase</code></p>
-<h3 id='parameters-2'>Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>email</td>
-<td>string</td>
-<td>True</td>
-<td><code>Verna@email.com</code></td>
-<td></td>
-</tr>
-<tr>
-<td>password</td>
-<td>string</td>
-<td>True</td>
-<td><code>Ve73lxU90rZx</code></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id='classrooms'>Classrooms</h2>
+<h1 id='core'>Core</h1><h2 id='classrooms'>Classrooms</h2>
 <blockquote>
 <p>The API returns JSON structured like this:</p>
 </blockquote>
@@ -619,106 +624,63 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
                 </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01 Greeting people"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"sort"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Greeting people"</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Greetings"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10741</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"activities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"sequences"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                             </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                                 </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"word_matching"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Greeting people"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"activityData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                            </span><span class="s2">"word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nginti nankeri?"</span><span class="p">,</span><span class="w">
-                                            </span><span class="s2">"words"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                                                </span><span class="s2">"Is he good?"</span><span class="p">,</span><span class="w">
-                                                </span><span class="s2">"Are you good?"</span><span class="p">,</span><span class="w">
-                                                </span><span class="s2">"Good day"</span><span class="p">,</span><span class="w">
-                                                </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                                                </span><span class="s2">""</span><span class="w">
-                                            </span><span class="p">],</span><span class="w">
-                                            </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-                                        </span><span class="p">}</span><span class="w">
+                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"sort"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"activities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                            </span><span class="p">{</span><span class="w">
+                                                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">511</span><span class="p">,</span><span class="w">
+                                                </span><span class="s2">"sort"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reading"</span><span class="p">,</span><span class="w">
+                                                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Who are you and where are you from?"</span><span class="p">,</span><span class="w">
+                                                </span><span class="s2">"activityData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                                    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                                        </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                                                    </span><span class="p">}</span><span class="w">
+                                                </span><span class="p">}</span><span class="w">
+                                            </span><span class="p">}</span><span class="w">
+                                        </span><span class="p">]</span><span class="w">
                                     </span><span class="p">}</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"word_matching"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Greeting people"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"activityData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                            </span><span class="s2">"word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ngurli nankeri?"</span><span class="p">,</span><span class="w">
-                                            </span><span class="s2">"words"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                                                </span><span class="s2">"Are you all good?"</span><span class="p">,</span><span class="w">
-                                                </span><span class="s2">"Good night"</span><span class="p">,</span><span class="w">
-                                                </span><span class="s2">"Are you two good?"</span><span class="p">,</span><span class="w">
-                                                </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                                                </span><span class="s2">""</span><span class="w">
-                                            </span><span class="p">],</span><span class="w">
-                                            </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-                                        </span><span class="p">}</span><span class="w">
-                                    </span><span class="p">}</span><span class="w">
-                                </span><span class="p">},</span><span class="w">
-                                </span><span class="err">...</span><span class="w">
+                                </span><span class="p">}</span><span class="w">
                             </span><span class="p">]</span><span class="w">
                         </span><span class="p">},</span><span class="w">
-                        </span><span class="s2">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10741</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSERT 5 PHOTO for back of insert P1040884"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INSERT 5 PHOTO for back of insert P1040884"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f2eb869b-e80d-47fa-a322-428638ab4fe6.jpg"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"speaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                </span><span class="s2">"vimeoURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
-                         </span><span class="s2">"associatedWords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"associatedWords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                             </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                                 </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1830</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1589</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buning"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ngamat; yuwuntal"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"word_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Noun"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"english_word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hooded dotterel (a bird species)"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nankeri ngendi"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"word_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expression"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"english_word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good night"</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"birds"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expressions"</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489985508</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1508702915</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1508799287</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"recordings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                                         </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                            </span><span class="s2">"male"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                                </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7893</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buning; ngamat; yuwuntal - male"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buning; ngamat; yuwuntal - male"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30e2867c-3498-4681-86ee-b02b93bdf871.wav"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sound"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"speaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"vimeoURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                                                </span><span class="p">}</span><span class="w">
-                                            </span><span class="p">},</span><span class="w">
                                             </span><span class="s2">"female"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                                                 </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8067</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buning; ngamat; yuwuntal - female"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buning; ngamat; yuwuntal - female"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7d60d6d5-13d4-4b1e-9fe6-041444da1638.mp4"</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6556</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nankeri ngendi - female"</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nankeri ngendi - female"</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5244bdc8-a07d-4414-aa03-9681e6891d6b.wav"</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sound"</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"speaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"173.41kB"</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"download_link"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"vimeoURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
                                                 </span><span class="p">}</span><span class="w">
                                             </span><span class="p">}</span><span class="w">
@@ -726,31 +688,49 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
                                     </span><span class="p">}</span><span class="w">
                                 </span><span class="p">},</span><span class="w">
                                 </span><span class="p">{</span><span class="w">
-                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2725</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5085</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"language_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kalu"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"keiwuki"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"word_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Noun"</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"english_word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Night bird"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nguldi arndu"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"word_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expression"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"english_word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Welcome (well-come)"</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"example"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"birds"</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"food, cooking, fire"</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1489985508</span><span class="p">,</span><span class="w">
-                                    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1508702917</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1508799361</span><span class="p">,</span><span class="w">
                                     </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10497</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100_2089"</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100_2089"</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d42452c1-f655-4a32-a34a-e0071d3f6369.jpg"</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"speaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"download_link"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                                            </span><span class="s2">"vimeoURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                                        </span><span class="p">}</span><span class="w">
+                                    </span><span class="p">},</span><span class="w">
                                     </span><span class="s2">"recordings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                                         </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                                             </span><span class="s2">"female"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                                                 </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7836</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kalu; keiwuki - female"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kalu; keiwuki - female"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ab5659dd-c6cd-4988-b7f8-c528ac6fbd56.wav"</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6260</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nguldi arndu - female"</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"original_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nguldi arndu - female"</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8178b25a-e282-4876-99b8-a12a51f11c4f.wav"</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sound"</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"speaker"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"133.88kB"</span><span class="p">,</span><span class="w">
+                                                    </span><span class="s2">"download_link"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                                                     </span><span class="s2">"vimeoURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
                                                 </span><span class="p">}</span><span class="w">
                                             </span><span class="p">}</span><span class="w">
@@ -758,17 +738,19 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
                                     </span><span class="p">}</span><span class="w">
                                 </span><span class="p">}</span><span class="w">
                             </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
                         </span><span class="p">}</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="err">...</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"teacher"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Auntie"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Phyllis Williams"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">131</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Phyllis"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Williams"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -789,12 +771,12 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">                   
+</span><span class="p">}</span><span class="w">       
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/classroom</code></p>
-<h3 id='parameters-3'>Parameters</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET [API URL]/api/v3/classroom</code></p>
+<h3 id='parameters-2'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -805,17 +787,10 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
 </tr>
 </thead><tbody>
 <tr>
-<td>email</td>
-<td>string</td>
+<td>languageID</td>
+<td>integer</td>
 <td>True</td>
-<td><code>Verna@email.com</code></td>
-<td></td>
-</tr>
-<tr>
-<td>password</td>
-<td>string</td>
-<td>True</td>
-<td><code>Ve73lxU90rZx</code></td>
+<td><code>1</code></td>
 <td></td>
 </tr>
 </tbody></table>
@@ -830,9 +805,9 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/dictionary/update</code></p>
-<h3 id='parameters-4'>Parameters</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET [API URL]/api/v3/dictionary/update</code></p>
+<h3 id='parameters-3'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1020,9 +995,9 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-7'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/topics</code></p>
-<h3 id='parameters-5'>Parameters</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET [API URL]/api/v3/topics</code></p>
+<h3 id='parameters-4'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1058,9 +1033,9 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/stories</code></p>
-<h3 id='parameters-6'>Parameters</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET [API URL]/api/v3/stories</code></p>
+<h3 id='parameters-5'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1109,9 +1084,9 @@ Some parts may be incomplete, outdated or missing entirely but every effort is b
 </span></code></pre>
 <p>This endpoint 
 AKA: basics, welcome, 101</p>
-<h3 id='http-request-9'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/primer</code></p>
-<h3 id='parameters-7'>Parameters</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET [API URL]/api/v3/primer</code></p>
+<h3 id='parameters-6'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1147,9 +1122,9 @@ AKA: basics, welcome, 101</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-10'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/auth</code></p>
-<h3 id='parameters-8'>Parameters</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET [API URL]/api/v3/auth</code></p>
+<h3 id='parameters-7'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1185,9 +1160,9 @@ AKA: basics, welcome, 101</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-11'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/games/current</code></p>
-<h3 id='parameters-9'>Parameters</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET [API URL]/api/v3/games/current</code></p>
+<h3 id='parameters-8'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1223,9 +1198,9 @@ AKA: basics, welcome, 101</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/games/current</code></p>
-<h3 id='parameters-10'>Parameters</h3>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET [API URL]/api/v3/games/current</code></p>
+<h3 id='parameters-9'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1261,8 +1236,8 @@ AKA: basics, welcome, 101</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-13'>HTTP Request</h3>
-<p><code>POST [API URL]/api/v2/games/score</code></p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>POST [API URL]/api/v3/games/score</code></p>
 <h3 id='post-parameters-3'>POST Parameters</h3>
 <table><thead>
 <tr>
@@ -1292,9 +1267,9 @@ AKA: basics, welcome, 101</p>
 <blockquote>
 <p>The API returns the file requested</p>
 </blockquote>
-<h3 id='http-request-14'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/resource/view/[ResourceID]</code></p>
-<h3 id='parameters-11'>Parameters</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET [API URL]/api/v3/resource/view/[ResourceID]</code></p>
+<h3 id='parameters-10'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1324,16 +1299,68 @@ AKA: basics, welcome, 101</p>
 <p>The API returns a signed S3 url</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"signed_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PUT"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[SIGNED s3 URL]"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"additionalData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"80cfad18-61ac-4ea5-89ec-101e186c34fa-testfile.jpg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-15'>HTTP Request</h3>
-<p><code>GET [API URL]/api/v2/resource/upload/</code></p>
-<h3 id='parameters-12'>Parameters</h3>
-<p>None</p>
+</span></code></pre><h3 id='http-request-14'>HTTP Request</h3>
+<p><code>POST [API URL]/api/v3/resource/request/</code></p>
+<h3 id='post-parameters-4'>POST Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>languageID</td>
+<td>integer</td>
+<td>True</td>
+<td><code>1</code></td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>True</td>
+<td><code>owls.jpg</code></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>True</td>
+<td><code>Brown Owls</code></td>
+<td></td>
+</tr>
+<tr>
+<td>entity</td>
+<td>enum</td>
+<td>True</td>
+<td>See <a href="#entity-types">entity-types</a></td>
+<td></td>
+</tr>
+<tr>
+<td>entity_id</td>
+<td>integer</td>
+<td>False</td>
+<td><code>1</code> or <code>empty</code></td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>True</td>
+<td><code>image/jpeg</code></td>
+<td>Mimetype</td>
+</tr>
+</tbody></table>
 <h1 id='password-reset-2'>Password reset</h1><h2 id='request-password-reset-2'>Request password reset</h2>
 <blockquote>
 <p>The API returns JSON structured like this:</p>
@@ -1345,9 +1372,9 @@ AKA: basics, welcome, 101</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-16'>HTTP Request</h3>
-<p><code>POST [API URL]/api/v2/password/forgot</code></p>
-<h3 id='parameters-13'>Parameters</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>POST [API URL]/api/v3/password/forgot</code></p>
+<h3 id='parameters-11'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1376,9 +1403,9 @@ AKA: basics, welcome, 101</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint </p>
-<h3 id='http-request-17'>HTTP Request</h3>
-<p><code>POST [API URL]/api/v2/password/forgot</code></p>
-<h3 id='parameters-14'>Parameters</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>POST [API URL]/api/v3/password/forgot</code></p>
+<h3 id='parameters-12'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1697,7 +1724,27 @@ The hot spot activity was originally called mapping but it was too confusing for
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre><h1 id='entity-types'>Entity types</h1>
+<table><thead>
+<tr>
+<th>Entity</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Dictionary</td>
+<td>The dictionary entity, used for words and translations.</td>
+</tr>
+<tr>
+<td>Phrase</td>
+<td>The phrase entity, used for phrases, conversations and the like.</td>
+</tr>
+<tr>
+<td>Song</td>
+<td>The song entity, used for solo or group songs.</td>
+</tr>
+</tbody></table>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
