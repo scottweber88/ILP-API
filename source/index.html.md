@@ -15,6 +15,7 @@ includes:
   - activity_word_to_picture_matching
   - activity_picture_to_word_matching
   - activity_word_matching
+  - entity_types
 
 
 search: true
@@ -80,13 +81,15 @@ This endpoint retrieves the authentication token and users name.
 
 ### HTTP Request
 
-`POST [API URL]/api/v2/register`
+`POST [API URL]/api/v3/register`
 
 ### POST Parameters
 
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
-name      | string     | True    | `Verna` | 
+title      | string     | True    | `Aunti` | 
+first_name      | string     | True    | `Verna` | 
+last_name      | string     | True    | `Creswell` | 
 email  | string     | True     | `Verna@email.com` |
 password  | string     | True     | `Ve73lxU90rZx` | 
 gender  | string     | True     | `female` |
@@ -108,7 +111,9 @@ attributes  | array     | False     | See [attributes](#attributes)  |
   "status": "success",
   "data": {
     "token": "f4kJs(Hmzys3G9)%sObCZXEkz-7IpVNZ",
-    "name": "Jason"
+    "title": "Tsar",
+    "first_name": "Jason",
+    "last_name": "Millward"
   }
 }
 ```
@@ -117,7 +122,7 @@ This endpoint retrieves the authentication token and users name.
 
 ### HTTP Request
 
-`POST [API URL]/api/v2/auth`
+`POST [API URL]/api/v3/auth`
 
 ### POST Parameters
 
@@ -153,9 +158,36 @@ password      | string     | True    | `Ve73lxU90rZx` |
 
 ```json
 {
-  "status": "success",
-  "data": {
-  }
+	"data": [
+		{
+			"id": 1,
+			"language": "Ngarrindjeri",
+			"shortcode": "nga",
+			"timezone": "Australia\/Adelaide",
+			"greeting": "Nguldi arndu"
+		},
+		{
+			"id": 2,
+			"language": "Yugambeh",
+			"shortcode": "yug",
+			"timezone": "Australia\/Brisbane",
+			"greeting": "Jingeri"
+		},
+		{
+			"id": 3,
+			"language": "Gunggari",
+			"shortcode": "gun",
+			"timezone": "Australia\/Brisbane",
+			"greeting": "Yowala"
+		},
+		{
+			"id": 4,
+			"language": "Yalnun An'gabah",
+			"shortcode": "yal",
+			"timezone": "Australia\/Brisbane",
+			"greeting": "Jingeri"
+		}
+	]
 }
 ```
 
@@ -163,7 +195,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/language`
+`GET [API URL]/api/v3/language`
 
 ### Parameters
 
@@ -171,33 +203,10 @@ Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
 email      | string     | True    | `Verna@email.com` | 
 password      | string     | True    | `Ve73lxU90rZx` | 
+
+
 
 # Core 
-
-## Phrases
-
-> The API returns JSON structured like this:
-
-```json
-{
-  "status": "success",
-  "data": {
-  }
-}
-```
-
-This endpoint 
-
-### HTTP Request
-
-`GET [API URL]/api/v2/phrase`
-
-### Parameters
-
-Parameter | Type | Required | Example | Description
---------- | ---- | -------- | ------- | -----------
-email      | string     | True    | `Verna@email.com` | 
-password      | string     | True    | `Ve73lxU90rZx` | 
 
 
 ## Classrooms
@@ -215,156 +224,133 @@ password      | string     | True    | `Ve73lxU90rZx` |
 				"data": [
 					{
 						"id": 79,
-						"title": "01 Greeting people",
+						"sort": 1,
+						"title": "Greeting people",
 						"description": "Greetings",
-						"resource_id": 10741,
-						"activities": {
+						"sequences": {
 							"data": [
 								{
-									"id": 401,
-									"type": "word_matching",
-									"title": "Greeting people",
-									"activityData": {
+									"id": 1,
+									"sort": 1,
+									"name": "Test",
+									"activities": {
+										"data": [
+											{
+												"id": 511,
+												"sort": 1,
+												"type": "reading",
+												"title": "Who are you and where are you from?",
+												"activityData": {
+													"data": {
+														"body": ""
+													}
+												}
+											}
+										]
+									}
+								}
+							]
+						},
+						"associatedWords": {
+							"data": [
+								{
+									"id": 1589,
+									"language_id": 1,
+									"word": "nankeri ngendi",
+									"alt": "",
+									"word_class": "Expression",
+									"english_word": "Good night",
+									"example": null,
+									"category": "expressions",
+									"comments": "",
+									"created_at": 1489985508,
+									"updated_at": 1508799287,
+									"deleted_at": 0,
+									"recordings": {
 										"data": {
-											"word": "Nginti nankeri?",
-											"words": [
-												"Is he good?",
-												"Are you good?",
-												"Good day",
-												"",
-												""
-											],
-											"answer": 1
+											"female": {
+												"data": {
+													"id": 6556,
+													"title": "nankeri ngendi - female",
+													"original_name": "nankeri ngendi - female",
+													"name": "5244bdc8-a07d-4414-aa03-9681e6891d6b.wav",
+													"type": "sound",
+													"thumbnail": null,
+													"speaker": null,
+													"copyright": null,
+													"notes": null,
+													"size": "173.41kB",
+													"download_link": null,
+													"vimeoURL": null
+												}
+											}
 										}
 									}
 								},
 								{
-									"id": 403,
-									"type": "word_matching",
-									"title": "Greeting people",
-									"activityData": {
+									"id": 5085,
+									"language_id": 1,
+									"word": "nguldi arndu",
+									"alt": null,
+									"word_class": "Expression",
+									"english_word": "Welcome (well-come)",
+									"example": null,
+									"category": "food, cooking, fire",
+									"comments": "",
+									"created_at": 1489985508,
+									"updated_at": 1508799361,
+									"deleted_at": 0,
+									"image": {
 										"data": {
-											"word": "Ngurli nankeri?",
-											"words": [
-												"Are you all good?",
-												"Good night",
-												"Are you two good?",
-												"",
-												""
-											],
-											"answer": 2
+											"id": 10497,
+											"title": "100_2089",
+											"original_name": "100_2089",
+											"name": "d42452c1-f655-4a32-a34a-e0071d3f6369.jpg",
+											"type": "image",
+											"thumbnail": null,
+											"speaker": null,
+											"copyright": null,
+											"notes": null,
+											"size": 0,
+											"download_link": null,
+											"vimeoURL": null
+										}
+									},
+									"recordings": {
+										"data": {
+											"female": {
+												"data": {
+													"id": 6260,
+													"title": "nguldi arndu - female",
+													"original_name": "nguldi arndu - female",
+													"name": "8178b25a-e282-4876-99b8-a12a51f11c4f.wav",
+													"type": "sound",
+													"thumbnail": null,
+													"speaker": null,
+													"copyright": null,
+													"notes": null,
+													"size": "133.88kB",
+													"download_link": null,
+													"vimeoURL": null
+												}
+											}
 										}
 									}
-								},
-								...
+								}
 							]
 						},
-						"resource": {
-							"data": {
-								"id": 10741,
-								"title": "INSERT 5 PHOTO for back of insert P1040884",
-								"original_name": "INSERT 5 PHOTO for back of insert P1040884",
-								"name": "f2eb869b-e80d-47fa-a322-428638ab4fe6.jpg",
-								"type": "image",
-								"thumbnail": null,
-								"speaker": null,
-								"copyright": null,
-								"notes": null,
-								"vimeoURL": null
-							}
-						},
-                         "associatedWords": {
-                            "data": [
-                                {
-                                    "id": 1830,
-                                    "language_id": 1,
-                                    "word": "buning",
-                                    "alt": "ngamat; yuwuntal",
-                                    "word_class": "Noun",
-                                    "english_word": "Hooded dotterel (a bird species)",
-                                    "example": null,
-                                    "category": "birds",
-                                    "comments": "",
-                                    "created_at": 1489985508,
-                                    "updated_at": 1508702915,
-                                    "deleted_at": 0,
-                                    "recordings": {
-                                        "data": {
-                                            "male": {
-                                                "data": {
-                                                    "id": 7893,
-                                                    "title": "buning; ngamat; yuwuntal - male",
-                                                    "original_name": "buning; ngamat; yuwuntal - male",
-                                                    "name": "30e2867c-3498-4681-86ee-b02b93bdf871.wav",
-                                                    "type": "sound",
-                                                    "thumbnail": null,
-                                                    "speaker": null,
-                                                    "copyright": null,
-                                                    "notes": null,
-                                                    "vimeoURL": null
-                                                }
-                                            },
-                                            "female": {
-                                                "data": {
-                                                    "id": 8067,
-                                                    "title": "buning; ngamat; yuwuntal - female",
-                                                    "original_name": "buning; ngamat; yuwuntal - female",
-                                                    "name": "7d60d6d5-13d4-4b1e-9fe6-041444da1638.mp4",
-                                                    "type": "sound",
-                                                    "thumbnail": null,
-                                                    "speaker": null,
-                                                    "copyright": null,
-                                                    "notes": null,
-                                                    "vimeoURL": null
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "id": 2725,
-                                    "language_id": 1,
-                                    "word": "kalu",
-                                    "alt": "keiwuki",
-                                    "word_class": "Noun",
-                                    "english_word": "Night bird",
-                                    "example": null,
-                                    "category": "birds",
-                                    "comments": "",
-                                    "created_at": 1489985508,
-                                    "updated_at": 1508702917,
-                                    "deleted_at": 0,
-                                    "recordings": {
-                                        "data": {
-                                            "female": {
-                                                "data": {
-                                                    "id": 7836,
-                                                    "title": "kalu; keiwuki - female",
-                                                    "original_name": "kalu; keiwuki - female",
-                                                    "name": "ab5659dd-c6cd-4988-b7f8-c528ac6fbd56.wav",
-                                                    "type": "sound",
-                                                    "thumbnail": null,
-                                                    "speaker": null,
-                                                    "copyright": null,
-                                                    "notes": null,
-                                                    "vimeoURL": null
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-					},
-					...
+						"tags": {
+							"data": []
+						}
+					}
 				]
 			},
 			"teacher": {
 				"data": {
-					"id": 1,
-					"title": "Auntie",
-					"first_name": "Phyllis Williams",
-					"last_name": "",
+					"id": 131,
+					"title": null,
+					"first_name": "Phyllis",
+					"last_name": "Williams",
 					"email": ""
 				}
 			},
@@ -385,21 +371,21 @@ password      | string     | True    | `Ve73lxU90rZx` |
 			}
 		}
 	]
-}					
+}		
 ```
 
 This endpoint 
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/classroom`
+`GET [API URL]/api/v3/classroom`
 
 ### Parameters
 
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
-email      | string     | True    | `Verna@email.com` | 
-password      | string     | True    | `Ve73lxU90rZx` | 
+languageID      | integer     | True    | `1` | 
+
 
 
 ## Dictionary
@@ -418,7 +404,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/dictionary/update`
+`GET [API URL]/api/v3/dictionary/update`
 
 ### Parameters
 
@@ -596,7 +582,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/topics`
+`GET [API URL]/api/v3/topics`
 
 ### Parameters
 
@@ -622,7 +608,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/stories`
+`GET [API URL]/api/v3/stories`
 
 ### Parameters
 
@@ -661,7 +647,7 @@ AKA: basics, welcome, 101
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/primer`
+`GET [API URL]/api/v3/primer`
 
 ### Parameters
 
@@ -688,7 +674,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/auth`
+`GET [API URL]/api/v3/auth`
 
 ### Parameters
 
@@ -714,7 +700,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/games/current`
+`GET [API URL]/api/v3/games/current`
 
 ### Parameters
 
@@ -741,7 +727,7 @@ This endpoint
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/games/current`
+`GET [API URL]/api/v3/games/current`
 
 ### Parameters
 
@@ -768,7 +754,7 @@ This endpoint
 
 ### HTTP Request
 
-`POST [API URL]/api/v2/games/score`
+`POST [API URL]/api/v3/games/score`
 
 ### POST Parameters
 
@@ -786,7 +772,7 @@ password      | string     | True    | `Ve73lxU90rZx` |
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/resource/view/[ResourceID]`
+`GET [API URL]/api/v3/resource/view/[ResourceID]`
 
 ### Parameters
 
@@ -816,21 +802,33 @@ size      | integer     | False    | `100` | If the resource is an image, resize
 
 ```json
 {
-  "status": "success",
-  "data": {
-    "signed_url": "",
-    "method": "PUT"
-  }
+	"error": false,
+	"url": "[SIGNED s3 URL]",
+	"additionalData": {
+		"fileName": "80cfad18-61ac-4ea5-89ec-101e186c34fa-testfile.jpg"
+	},
+	"code": 200
 }
 ```
 
 ### HTTP Request
 
-`GET [API URL]/api/v2/resource/upload/`
+`POST [API URL]/api/v3/resource/request/`
 
-### Parameters
+### POST Parameters
 
-None
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+languageID      | integer     | True    | `1` | 
+name      | string     | True    | `owls.jpg` | 
+title      | string     | True    | `Brown Owls` | 
+entity      | enum     | True    | See [entity-types](#entity-types)| 
+entity_id      | integer     | False    | `1` or `empty` | 
+type      | string     | True    | `image/jpeg` | Mimetype
+
+
+
 
 
 # Password reset 
@@ -852,7 +850,7 @@ This endpoint
 
 ### HTTP Request
 
-`POST [API URL]/api/v2/password/forgot`
+`POST [API URL]/api/v3/password/forgot`
 
 ### Parameters
 
@@ -877,7 +875,7 @@ This endpoint
 
 ### HTTP Request
 
-`POST [API URL]/api/v2/password/forgot`
+`POST [API URL]/api/v3/password/forgot`
 
 ### Parameters
 
