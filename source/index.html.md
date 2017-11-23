@@ -813,7 +813,7 @@ size      | integer     | False    | `100` | If the resource is an image, resize
 
 ### HTTP Request
 
-`POST [API URL]/api/v3/resource/request/`
+`POST [API URL]/api/v3/resource/request`
 
 ### POST Parameters
 
