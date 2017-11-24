@@ -87,7 +87,7 @@ This endpoint retrieves the authentication token and users name.
 
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
-title      | string     | True    | `Aunti` | 
+title      | string     | False    | `Aunti` | 
 first_name      | string     | True    | `Verna` | 
 last_name      | string     | True    | `Creswell` | 
 email  | string     | True     | `Verna@email.com` |
