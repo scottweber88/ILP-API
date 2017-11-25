@@ -1535,7 +1535,12 @@ The image is cached on the back end for 1 hour or until the user changes his or 
         </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tsar"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jason"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Millward"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jason@email.com"</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jason@email.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1902-11-30"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"indigenous"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"student"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1562,17 +1567,40 @@ The image is cached on the back end for 1 hour or until the user changes his or 
 </tbody></table>
 <h2 id='update-profile'>Update Profile</h2>
 <blockquote>
-<p>The API returns JSON structured like this:</p>
+<p>On success API returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tsar"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jason"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Millward"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jason@email.com"</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jason@email.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1902-11-30"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"indigenous"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"student"</span><span class="w">
     </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>On error the API returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The given data was invalid."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"The email has already been taken."</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"The password must be at least 3 characters."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"The password confirmation does not match."</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"The dob is not a valid date."</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint updates the currently logged in users profile.</p>
@@ -1611,28 +1639,63 @@ The image is cached on the back end for 1 hour or until the user changes his or 
 <td>string</td>
 <td>False</td>
 <td><code>Ve73lxU90rZx</code></td>
-<td></td>
+<td>Users new password.</td>
+</tr>
+<tr>
+<td>password_confirmation</td>
+<td>string</td>
+<td>False</td>
+<td><code>Ve73lxU90rZx</code></td>
+<td>Confirmation of users new password. Required if <code>password</code> is sent.</td>
 </tr>
 <tr>
 <td>title</td>
 <td>string</td>
 <td>False</td>
 <td><code>Tsar</code></td>
-<td></td>
+<td>Users title. See allowed list of titles.</td>
 </tr>
 <tr>
 <td>first_name</td>
 <td>string</td>
 <td>False</td>
 <td><code>Jason</code></td>
-<td></td>
+<td>Users first name.</td>
 </tr>
 <tr>
 <td>last_name</td>
 <td>string</td>
 <td>False</td>
 <td><code>Millward</code></td>
-<td></td>
+<td>Users last name.</td>
+</tr>
+<tr>
+<td>dob</td>
+<td>string</td>
+<td>False</td>
+<td><code>Millward</code></td>
+<td>Date of Birth.</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>enum</td>
+<td>False</td>
+<td><code>male</code></td>
+<td>See allowed list of genders.</td>
+</tr>
+<tr>
+<td>postcode</td>
+<td>integer</td>
+<td>False</td>
+<td><code>Millward</code></td>
+<td>Post code of current residence.</td>
+</tr>
+<tr>
+<td>indigenous</td>
+<td>boolean</td>
+<td>False</td>
+<td><code>false</code></td>
+<td>Are you a native Australian?</td>
 </tr>
 </tbody></table>
 <h1 id='activity-types'>Activity Types</h1>
