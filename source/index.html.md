@@ -227,6 +227,7 @@ password      | string     | True    | `Ve73lxU90rZx` |
 						"sort": 1,
 						"title": "Greeting people",
 						"description": "Greetings",
+						"teacher_notes": "[HTML TEACHER NOTES]"
 						"sequences": {
 							"data": [
 								{
@@ -425,7 +426,6 @@ password      | string     | True    | `Ve73lxU90rZx` |
 			"id": 81,
 			"title": "Farewelling people",
 			"description": "",
-			"resource_id": 99,
 			"activities": {
 				"data": [
 					{
