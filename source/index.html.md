@@ -157,37 +157,37 @@ password      | string     | True    | `Ve73lxU90rZx` |
 > The API returns JSON structured like this:
 
 ```json
-{
-	"data": [
-		{
-			"id": 1,
-			"language": "Ngarrindjeri",
-			"shortcode": "nga",
-			"timezone": "Australia\/Adelaide",
-			"greeting": "Nguldi arndu"
-		},
-		{
-			"id": 2,
-			"language": "Yugambeh",
-			"shortcode": "yug",
-			"timezone": "Australia\/Brisbane",
-			"greeting": "Jingeri"
-		},
-		{
-			"id": 3,
-			"language": "Gunggari",
-			"shortcode": "gun",
-			"timezone": "Australia\/Brisbane",
-			"greeting": "Yowala"
-		},
-		{
-			"id": 4,
-			"language": "Yalnun An'gabah",
-			"shortcode": "yal",
-			"timezone": "Australia\/Brisbane",
-			"greeting": "Jingeri"
-		}
-	]
+{  
+  "data":[  
+    {  
+      "id":1,
+      "language":"Ngarrindjeri",
+      "shortcode":"nga",
+      "timezone":"Australia\/Adelaide",
+      "greeting":"Nguldi arndu"
+    },
+    {  
+      "id":2,
+      "language":"Yugambeh",
+      "shortcode":"yug",
+      "timezone":"Australia\/Brisbane",
+      "greeting":"Jingeri"
+    },
+    {  
+      "id":3,
+      "language":"Gunggari",
+      "shortcode":"gun",
+      "timezone":"Australia\/Brisbane",
+      "greeting":"Yowala"
+    },
+    {  
+      "id":4,
+      "language":"Yalnun An'gabah",
+      "shortcode":"yal",
+      "timezone":"Australia\/Brisbane",
+      "greeting":"Jingeri"
+    }
+  ]
 }
 ```
 
@@ -214,165 +214,167 @@ password      | string     | True    | `Ve73lxU90rZx` |
 > The API returns JSON structured like this:
 
 ```json
-{
-	"data": [
-		{
-			"id": 49,
-			"name": "Kainggi Thunggari Prap",
-			"year_level": "Years 3 to 6",
-			"topic": {
-				"data": [
-					{
-						"id": 79,
-						"sort": 1,
-						"title": "Greeting people",
-						"description": "Greetings",
-						"teacher_notes": "[HTML TEACHER NOTES]"
-						"sequences": {
-							"data": [
-								{
-									"id": 1,
-									"sort": 1,
-									"name": "Test",
-									"activities": {
-										"data": [
-											{
-												"id": 511,
-												"sort": 1,
-												"type": "reading",
-												"title": "Who are you and where are you from?",
-												"activityData": {
-													"data": {
-														"body": ""
-													}
-												}
-											}
-										]
-									}
-								}
-							]
-						},
-						"associatedWords": {
-							"data": [
-								{
-									"id": 1589,
-									"language_id": 1,
-									"word": "nankeri ngendi",
-									"alt": "",
-									"word_class": "Expression",
-									"english_word": "Good night",
-									"example": null,
-									"category": "expressions",
-									"comments": "",
-									"created_at": 1489985508,
-									"updated_at": 1508799287,
-									"deleted_at": 0,
-									"recordings": {
-										"data": {
-											"female": {
-												"data": {
-													"id": 6556,
-													"title": "nankeri ngendi - female",
-													"original_name": "nankeri ngendi - female",
-													"name": "5244bdc8-a07d-4414-aa03-9681e6891d6b.wav",
-													"type": "sound",
-													"thumbnail": null,
-													"speaker": null,
-													"copyright": null,
-													"notes": null,
-													"size": "173.41kB",
-													"download_link": null,
-													"vimeoURL": null
-												}
-											}
-										}
-									}
-								},
-								{
-									"id": 5085,
-									"language_id": 1,
-									"word": "nguldi arndu",
-									"alt": null,
-									"word_class": "Expression",
-									"english_word": "Welcome (well-come)",
-									"example": null,
-									"category": "food, cooking, fire",
-									"comments": "",
-									"created_at": 1489985508,
-									"updated_at": 1508799361,
-									"deleted_at": 0,
-									"image": {
-										"data": {
-											"id": 10497,
-											"title": "100_2089",
-											"original_name": "100_2089",
-											"name": "d42452c1-f655-4a32-a34a-e0071d3f6369.jpg",
-											"type": "image",
-											"thumbnail": null,
-											"speaker": null,
-											"copyright": null,
-											"notes": null,
-											"size": 0,
-											"download_link": null,
-											"vimeoURL": null
-										}
-									},
-									"recordings": {
-										"data": {
-											"female": {
-												"data": {
-													"id": 6260,
-													"title": "nguldi arndu - female",
-													"original_name": "nguldi arndu - female",
-													"name": "8178b25a-e282-4876-99b8-a12a51f11c4f.wav",
-													"type": "sound",
-													"thumbnail": null,
-													"speaker": null,
-													"copyright": null,
-													"notes": null,
-													"size": "133.88kB",
-													"download_link": null,
-													"vimeoURL": null
-												}
-											}
-										}
-									}
-								}
-							]
-						},
-						"tags": {
-							"data": []
-						}
-					}
-				]
-			},
-			"teacher": {
-				"data": {
-					"id": 131,
-					"title": null,
-					"first_name": "Phyllis",
-					"last_name": "Williams",
-					"email": ""
-				}
-			},
-			"school": {
-				"data": {
-					"id": 31,
-					"name": "Kainggi Thunggari Prap",
-					"language": {
-						"data": {
-							"id": 1,
-							"language": "Ngarrindjeri",
-							"shortcode": "nga",
-							"timezone": "Australia\/Adelaide",
-							"greeting": "Nguldi arndu"
-						}
-					}
-				}
-			}
-		}
-	]
-}		
+{  
+  "data":[  
+    {  
+      "id":49,
+      "name":"Kainggi Thunggari Prap",
+      "year_level":"Years 3 to 6",
+      "topic":{  
+        "data":[  
+          {  
+            "id":79,
+            "sort":1,
+            "title":"Greeting people",
+            "description":"Greetings",
+            "teacher_notes":"[HTML TEACHER NOTES]",
+            "sequences":{  
+              "data":[  
+                {  
+                  "id":1,
+                  "sort":1,
+                  "name":"Test",
+                  "activities":{  
+                    "data":[  
+                      {  
+                        "id":511,
+                        "sort":1,
+                        "type":"reading",
+                        "title":"Who are you and where are you from?",
+                        "activityData":{  
+                          "data":{  
+                            "body":""
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "associatedWords":{  
+              "data":[  
+                {  
+                  "id":1589,
+                  "language_id":1,
+                  "word":"nankeri ngendi",
+                  "alt":"",
+                  "word_class":"Expression",
+                  "english_word":"Good night",
+                  "example":null,
+                  "category":"expressions",
+                  "comments":"",
+                  "created_at":1489985508,
+                  "updated_at":1508799287,
+                  "deleted_at":0,
+                  "recordings":{  
+                    "data":{  
+                      "female":{  
+                        "data":{  
+                          "id":6556,
+                          "title":"nankeri ngendi - female",
+                          "original_name":"nankeri ngendi - female",
+                          "name":"5244bdc8-a07d-4414-aa03-9681e6891d6b.wav",
+                          "type":"sound",
+                          "thumbnail":null,
+                          "speaker":null,
+                          "copyright":null,
+                          "notes":null,
+                          "size":"173.41kB",
+                          "download_link":null,
+                          "vimeoURL":null
+                        }
+                      }
+                    }
+                  }
+                },
+                {  
+                  "id":5085,
+                  "language_id":1,
+                  "word":"nguldi arndu",
+                  "alt":null,
+                  "word_class":"Expression",
+                  "english_word":"Welcome (well-come)",
+                  "example":null,
+                  "category":"food, cooking, fire",
+                  "comments":"",
+                  "created_at":1489985508,
+                  "updated_at":1508799361,
+                  "deleted_at":0,
+                  "image":{  
+                    "data":{  
+                      "id":10497,
+                      "title":"100_2089",
+                      "original_name":"100_2089",
+                      "name":"d42452c1-f655-4a32-a34a-e0071d3f6369.jpg",
+                      "type":"image",
+                      "thumbnail":null,
+                      "speaker":null,
+                      "copyright":null,
+                      "notes":null,
+                      "size":0,
+                      "download_link":null,
+                      "vimeoURL":null
+                    }
+                  },
+                  "recordings":{  
+                    "data":{  
+                      "female":{  
+                        "data":{  
+                          "id":6260,
+                          "title":"nguldi arndu - female",
+                          "original_name":"nguldi arndu - female",
+                          "name":"8178b25a-e282-4876-99b8-a12a51f11c4f.wav",
+                          "type":"sound",
+                          "thumbnail":null,
+                          "speaker":null,
+                          "copyright":null,
+                          "notes":null,
+                          "size":"133.88kB",
+                          "download_link":null,
+                          "vimeoURL":null
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "tags":{  
+              "data":[  
+
+              ]
+            }
+          }
+        ]
+      },
+      "teacher":{  
+        "data":{  
+          "id":131,
+          "title":null,
+          "first_name":"Phyllis",
+          "last_name":"Williams",
+          "email":""
+        }
+      },
+      "school":{  
+        "data":{  
+          "id":31,
+          "name":"Kainggi Thunggari Prap",
+          "language":{  
+            "data":{  
+              "id":1,
+              "language":"Ngarrindjeri",
+              "shortcode":"nga",
+              "timezone":"Australia\/Adelaide",
+              "greeting":"Nguldi arndu"
+            }
+          }
+        }
+      }
+    }
+  ]
+}	
 ```
 
 This endpoint 
@@ -420,161 +422,133 @@ password      | string     | True    | `Ve73lxU90rZx` |
 > The API returns JSON structured like this:
 
 ```json
-{
-	"data": [
-		{
-			"id": 81,
-			"title": "Farewelling people",
-			"description": "",
-			"activities": {
-				"data": [
-					{
-						"id": 455,
-						"type": "word_matching",
-						"title": "Farewelling people",
-						"activityData": {
-							"data": {
-								"word": "Nakan ya",
-								"words": [
-									"Good night",
-									"I am going",
-									"See you later",
-									"",
-									""
-								],
-								"answer": 2
-							}
-						}
-					},
-					{
-						"id": 457,
-						"type": "word_matching",
-						"title": "Farewelling people",
-						"activityData": {
-							"data": {
-								"word": "Nakan ngum",
-								"words": [
-									"Nakan lom",
-									"See you later",
-									"Nakan nom",
-									"",
-									""
-								],
-								"answer": 1
-							}
-						}
-					},
-					...
-				]
-			},
-			"resource": {
-				"data": {
-					"id": 99,
-					"title": "Image 1",
-					"original_name": "Image 1",
-					"name": "cb5ed22886d4715659424732b.jpg",
-					"type": "image",
-					"thumbnail": null,
-					"speaker": null,
-					"copyright": null,
-					"notes": null,
-					"vimeoURL": null
-				}
-			},
-			"associatedWords": {
-				"data": [
-					{
-						"id": 1830,
-						"language_id": 1,
-						"word": "buning",
-						"alt": "ngamat; yuwuntal",
-						"word_class": "Noun",
-						"english_word": "Hooded dotterel (a bird species)",
-						"example": null,
-						"category": "birds",
-						"comments": "",
-						"created_at": 1489985508,
-						"updated_at": 1508702915,
-						"deleted_at": 0,
-						"recordings": {
-							"data": {
-								"male": {
-									"data": {
-										"id": 7893,
-										"title": "buning; ngamat; yuwuntal - male",
-										"original_name": "buning; ngamat; yuwuntal - male",
-										"name": "30e2867c-3498-4681-86ee-b02b93bdf871.wav",
-										"type": "sound",
-										"thumbnail": null,
-										"speaker": null,
-										"copyright": null,
-										"notes": null,
-										"vimeoURL": null
-									}
-								},
-								"female": {
-									"data": {
-										"id": 8067,
-										"title": "buning; ngamat; yuwuntal - female",
-										"original_name": "buning; ngamat; yuwuntal - female",
-										"name": "7d60d6d5-13d4-4b1e-9fe6-041444da1638.mp4",
-										"type": "sound",
-										"thumbnail": null,
-										"speaker": null,
-										"copyright": null,
-										"notes": null,
-										"vimeoURL": null
-									}
-								}
-							}
-						}
-					},
-					{
-						"id": 2725,
-						"language_id": 1,
-						"word": "kalu",
-						"alt": "keiwuki",
-						"word_class": "Noun",
-						"english_word": "Night bird",
-						"example": null,
-						"category": "birds",
-						"comments": "",
-						"created_at": 1489985508,
-						"updated_at": 1508702917,
-						"deleted_at": 0,
-						"recordings": {
-							"data": {
-								"female": {
-									"data": {
-										"id": 7836,
-										"title": "kalu; keiwuki - female",
-										"original_name": "kalu; keiwuki - female",
-										"name": "ab5659dd-c6cd-4988-b7f8-c528ac6fbd56.wav",
-										"type": "sound",
-										"thumbnail": null,
-										"speaker": null,
-										"copyright": null,
-										"notes": null,
-										"vimeoURL": null
-									}
-								}
-							}
-						}
-					}
-				]
-			}
-		}
-	],
-	"meta": {
-		"pagination": {
-			"total": 1,
-			"count": 1,
-			"per_page": 50,
-			"current_page": 1,
-			"total_pages": 1,
-			"links": []
-		}
-	}
+{  
+  "data":[  
+    {  
+      "id":79,
+      "sort":1,
+      "title":"Greeting people",
+      "description":"Greetings",
+      "teacher_notes":"[HTML TEACHER NOTES]",
+      "sequences":{  
+        "data":[  
+          {  
+            "id":1,
+            "sort":1,
+            "name":"Test",
+            "activities":{  
+              "data":[  
+                {  
+                  "id":511,
+                  "sort":1,
+                  "type":"reading",
+                  "title":"Who are you and where are you from?",
+                  "activityData":{  
+                    "data":{  
+                      "body":""
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "associatedWords":{  
+        "data":[  
+          {  
+            "id":1589,
+            "language_id":1,
+            "word":"nankeri ngendi",
+            "alt":"",
+            "word_class":"Expression",
+            "english_word":"Good night",
+            "example":null,
+            "category":"expressions",
+            "comments":"",
+            "created_at":1489985508,
+            "updated_at":1508799287,
+            "deleted_at":0,
+            "recordings":{  
+              "data":{  
+                "female":{  
+                  "data":{  
+                    "id":6556,
+                    "title":"nankeri ngendi - female",
+                    "original_name":"nankeri ngendi - female",
+                    "name":"5244bdc8-a07d-4414-aa03-9681e6891d6b.wav",
+                    "type":"sound",
+                    "thumbnail":null,
+                    "speaker":null,
+                    "copyright":null,
+                    "notes":null,
+                    "size":"173.41kB",
+                    "download_link":null,
+                    "vimeoURL":null
+                  }
+                }
+              }
+            }
+          },
+          {  
+            "id":5085,
+            "language_id":1,
+            "word":"nguldi arndu",
+            "alt":null,
+            "word_class":"Expression",
+            "english_word":"Welcome (well-come)",
+            "example":null,
+            "category":"food, cooking, fire",
+            "comments":"",
+            "created_at":1489985508,
+            "updated_at":1508799361,
+            "deleted_at":0,
+            "image":{  
+              "data":{  
+                "id":10497,
+                "title":"100_2089",
+                "original_name":"100_2089",
+                "name":"d42452c1-f655-4a32-a34a-e0071d3f6369.jpg",
+                "type":"image",
+                "thumbnail":null,
+                "speaker":null,
+                "copyright":null,
+                "notes":null,
+                "size":0,
+                "download_link":null,
+                "vimeoURL":null
+              }
+            },
+            "recordings":{  
+              "data":{  
+                "female":{  
+                  "data":{  
+                    "id":6260,
+                    "title":"nguldi arndu - female",
+                    "original_name":"nguldi arndu - female",
+                    "name":"8178b25a-e282-4876-99b8-a12a51f11c4f.wav",
+                    "type":"sound",
+                    "thumbnail":null,
+                    "speaker":null,
+                    "copyright":null,
+                    "notes":null,
+                    "size":"133.88kB",
+                    "download_link":null,
+                    "vimeoURL":null
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "tags":{  
+        "data":[  
+
+        ]
+      }
+    }
+  ]
 }
 ```
 
@@ -801,13 +775,13 @@ size      | integer     | False    | `100` | If the resource is an image, resize
 
 
 ```json
-{
-	"error": false,
-	"url": "[SIGNED SD URL]",
-	"additionalData": {
-		"fileName": "80cfad18-61ac-4ea5-89ec-101e186c34fa-testfile.jpg"
-	},
-	"code": 200
+{  
+  "error":false,
+  "url":"[SIGNED SD URL]",
+  "additionalData":{  
+    "fileName":"80cfad18-61ac-4ea5-89ec-101e186c34fa-testfile.jpg"
+  },
+  "code":200
 }
 ```
 
@@ -939,12 +913,12 @@ Authorization | Bearer     | True    | `[User Token]` | This is the users API to
 > The API returns JSON structured like this:
 
 ```json
-{
-    "url": "[SIGNED S3 URL]",
-    "additionalData": {
-        "fileName": "80cfad18-61ac-4ea5-89ec-101e186c34fa-my_face.jpg"
-    },
-    "code": 200
+{  
+  "url":"[SIGNED S3 URL]",
+  "additionalData":{  
+    "fileName":"80cfad18-61ac-4ea5-89ec-101e186c34fa-my_face.jpg"
+  },
+  "code":200
 }
 ```
 
@@ -972,19 +946,19 @@ name      | string     | True    | `my_face.jpg` | The name of the image the use
 > The API returns JSON structured like this:
 
 ```json
-{
-	"data": {
-		"id": 1,
-		"title": "Tsar",
-		"first_name": "Jason",
-		"last_name": "Millward",
-		"email": "jason@email.com",
-		"dob": "1902-11-30",
-		"gender": "male",
-		"postcode": 5000,
-		"indigenous": 0,
-		"role": "student"
-	}
+{  
+  "data":{  
+    "id":1,
+    "title":"Tsar",
+    "first_name":"Jason",
+    "last_name":"Millward",
+    "email":"jason@email.com",
+    "dob":"1902-11-30",
+    "gender":"male",
+    "postcode":5000,
+    "indigenous":0,
+    "role":"student"
+  }
 }
 ```
 
@@ -1006,39 +980,39 @@ Authorization | Bearer     | True    | `[User Token]` | This is the users API to
 > On success API returns JSON structured like this:
 
 ```json
-{
-	"data": {
-		"id": 1,
-		"title": "Tsar",
-		"first_name": "Jason",
-		"last_name": "Millward",
-		"email": "jason@email.com",
-		"dob": "1902-11-30",
-		"gender": "male",
-		"postcode": 5000,
-		"indigenous": 0,
-		"role": "student"
-	}
+{  
+  "data":{  
+    "id":1,
+    "title":"Tsar",
+    "first_name":"Jason",
+    "last_name":"Millward",
+    "email":"jason@email.com",
+    "dob":"1902-11-30",
+    "gender":"male",
+    "postcode":5000,
+    "indigenous":0,
+    "role":"student"
+  }
 }
 ```
 
 > On error the API returns JSON structured like this:
 
 ```json
-{
-	"message": "The given data was invalid.",
-	"errors": {
-		"email": [
-			"The email has already been taken."
-		]
-	},
-    "password": [
-        "The password must be at least 3 characters.",
-        "The password confirmation does not match."
-    ],
-    "dob": [
-        "The dob is not a valid date."
+{  
+  "message":"The given data was invalid.",
+  "errors":{  
+    "email":[  
+      "The email has already been taken."
     ]
+  },
+  "password":[  
+    "The password must be at least 3 characters.",
+    "The password confirmation does not match."
+  ],
+  "dob":[  
+    "The dob is not a valid date."
+  ]
 }
 ```
 
