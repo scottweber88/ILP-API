@@ -803,7 +803,7 @@ size      | integer     | False    | `100` | If the resource is an image, resize
 ```json
 {
 	"error": false,
-	"url": "[SIGNED s3 URL]",
+	"url": "[SIGNED SD URL]",
 	"additionalData": {
 		"fileName": "80cfad18-61ac-4ea5-89ec-101e186c34fa-testfile.jpg"
 	},
@@ -877,7 +877,7 @@ This endpoint
 
 `POST [API URL]/api/v3/password/forgot`
 
-### Parameters
+### POST Parameters
 
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
@@ -885,3 +885,152 @@ email      | string     | True    | `Verna@email.com` |
 password      | string     | True    | `Ve73lxU90rZx` | 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Me
+
+## Get avatar
+
+> The API returns an image
+
+This endpoint returns a 512x512 image. 
+The image is cached on the back end for 1 hour or until the user changes his or her avatar.
+
+### HTTP Request
+
+`GET [API URL]/api/v3/me/avatar`
+
+### Headers
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+Authorization | Bearer     | True    | `[User Token]` | This is the users API token.
+
+
+## Update Avatar
+
+> The API returns JSON structured like this:
+
+```json
+{
+    "url": "[SIGNED S3 URL]",
+    "additionalData": {
+        "fileName": "80cfad18-61ac-4ea5-89ec-101e186c34fa-my_face.jpg"
+    },
+    "code": 200
+}
+```
+
+This endpoint returns a signed S3 url (PUT) for the app to upload the image to.
+
+### HTTP Request
+
+`POST [API URL]/api/v3/me/avatar`
+
+### Headers
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+Authorization | Bearer     | True    | `[User Token]` | This is the users API token.
+
+### POST Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+name      | string     | True    | `my_face.jpg` | The name of the image the user is uploading
+
+
+## Get Profile
+
+> The API returns JSON structured like this:
+
+```json
+{
+	"data": {
+		"id": 1,
+		"title": "Tsar",
+		"first_name": "Jason",
+		"last_name": "Millward",
+		"email": "jason@email.com"
+	}
+}
+```
+
+This endpoint returns the currently logged in users profile.
+
+### HTTP Request
+
+`GET [API URL]/api/v3/me/profile`
+
+### Headers
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+Authorization | Bearer     | True    | `[User Token]` | This is the users API token.
+
+
+## Update Profile
+
+> The API returns JSON structured like this:
+
+```json
+{
+    "status": "success",
+    "data": {
+        "id": 1,
+        "title": "Tsar",
+        "first_name": "Jason",
+        "last_name": "Millward",
+        "email": "jason@email.com"
+    }
+}
+```
+
+This endpoint updates the currently logged in users profile.
+
+### HTTP Request
+
+`POST [API URL]/api/v3/me/profile`
+
+### Headers
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+Authorization | Bearer     | True    | `[User Token]` | This is the users API token.
+
+
+### POST Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+password      | string     | False    | `Ve73lxU90rZx` | 
+title      | string     | False    | `Tsar` | 
+first_name      | string     | False    | `Jason` | 
+last_name      | string     | False    | `Millward` | 
