@@ -978,7 +978,12 @@ name      | string     | True    | `my_face.jpg` | The name of the image the use
 		"title": "Tsar",
 		"first_name": "Jason",
 		"last_name": "Millward",
-		"email": "jason@email.com"
+		"email": "jason@email.com",
+		"dob": "1902-11-30",
+		"gender": "male",
+		"postcode": 5000,
+		"indigenous": 0,
+		"role": "student"
 	}
 }
 ```
@@ -998,18 +1003,42 @@ Authorization | Bearer     | True    | `[User Token]` | This is the users API to
 
 ## Update Profile
 
-> The API returns JSON structured like this:
+> On success API returns JSON structured like this:
 
 ```json
 {
-    "status": "success",
-    "data": {
-        "id": 1,
-        "title": "Tsar",
-        "first_name": "Jason",
-        "last_name": "Millward",
-        "email": "jason@email.com"
-    }
+	"data": {
+		"id": 1,
+		"title": "Tsar",
+		"first_name": "Jason",
+		"last_name": "Millward",
+		"email": "jason@email.com",
+		"dob": "1902-11-30",
+		"gender": "male",
+		"postcode": 5000,
+		"indigenous": 0,
+		"role": "student"
+	}
+}
+```
+
+> On error the API returns JSON structured like this:
+
+```json
+{
+	"message": "The given data was invalid.",
+	"errors": {
+		"email": [
+			"The email has already been taken."
+		]
+	},
+    "password": [
+        "The password must be at least 3 characters.",
+        "The password confirmation does not match."
+    ],
+    "dob": [
+        "The dob is not a valid date."
+    ]
 }
 ```
 
@@ -1030,7 +1059,12 @@ Authorization | Bearer     | True    | `[User Token]` | This is the users API to
 
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
-password      | string     | False    | `Ve73lxU90rZx` | 
-title      | string     | False    | `Tsar` | 
-first_name      | string     | False    | `Jason` | 
-last_name      | string     | False    | `Millward` | 
+password      | string     | False    | `Ve73lxU90rZx` | Users new password.
+password_confirmation      | string     | False | `Ve73lxU90rZx` | Confirmation of users new password. Required if `password` is sent.
+title      | string     | False    | `Tsar` | Users title. See allowed list of titles.
+first_name      | string     | False    | `Jason` | Users first name.
+last_name      | string     | False    | `Millward` | Users last name.
+dob      | string     | False    | `Millward` | Date of Birth.
+gender      | enum   | False    | `male` | See allowed list of genders.
+postcode      | integer     | False    | `Millward` | Post code of current residence.
+indigenous      | boolean     | False    | `false` | Are you a native Australian?
