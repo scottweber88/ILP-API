@@ -252,6 +252,13 @@ password      | string     | True    | `Ve73lxU90rZx` |
                 }
               ]
             },
+            "category": {
+              "data": {
+                "id": 3,
+                "name": "Test Category",
+                "colour": "#F44E3B"
+              }
+            },
             "associatedWords":{  
               "data":[  
                 {  
