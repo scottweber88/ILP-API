@@ -1078,9 +1078,17 @@ This endpoint returns the latest social media for a language, in reverse (descen
     }
   ]
 }
+```
+
 ### HTTP Request
 
 `GET [API URL]/api/v3/social-media`
+
+### Headers
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+Authorization | Bearer     | True    | `[User Token]` | This is the users API token.
 
 ### GET Parameters
 
