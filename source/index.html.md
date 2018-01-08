@@ -1049,3 +1049,41 @@ dob      | string     | False    | `Millward` | Date of Birth.
 gender      | enum   | False    | `male` | See allowed list of genders.
 postcode      | integer     | False    | `Millward` | Post code of current residence.
 indigenous      | boolean     | False    | `false` | Are you a native Australian?
+
+
+# Social Media
+
+## Retrieve Social Media
+
+This endpoint returns the latest social media for a language, in reverse (descending) time order.
+
+> On Success this API returns json like
+
+```json
+{
+  "data": [
+    {
+      "author_display_name": "craig snudden",
+      "hash_tags": [
+        "celebrate",
+        "Kooriartexpressions",
+        "ourlanguagesmatter"
+      ],
+      "id": 1,
+      "image": null,
+      "platform_name": "Twitter",
+      "published": "2017-11-28 04:23:47",
+      "text": "RT @Mrs_Tobias9: @BangorPS @craigsnudden #ourlanguagesmatter #Kooriartexpressions #celebrate https://t.co/Kont0HVjJj",
+      "title": null
+    }
+  ]
+}
+### HTTP Request
+
+`GET [API URL]/api/v3/social-media`
+
+### GET Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+languageID | integer | True | 1 | The ID of the language to retrieve social media for
