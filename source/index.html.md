@@ -381,7 +381,7 @@ password      | string     | True    | `Ve73lxU90rZx` |
       }
     }
   ]
-}	
+}  
 ```
 
 This endpoint 
@@ -422,156 +422,6 @@ Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
 email      | string     | True    | `Verna@email.com` | 
 password      | string     | True    | `Ve73lxU90rZx` | 
-
-
-## Topics
-
-> The API returns JSON structured like this:
-
-```json
-{  
-  "data":[  
-    {  
-      "id":79,
-      "sort":1,
-      "title":"Greeting people",
-      "description":"Greetings",
-      "teacher_notes":"[HTML TEACHER NOTES]",
-      "sequences":{  
-        "data":[  
-          {  
-            "id":1,
-            "sort":1,
-            "name":"Test",
-            "activities":{  
-              "data":[  
-                {  
-                  "id":511,
-                  "sort":1,
-                  "type":"reading",
-                  "title":"Who are you and where are you from?",
-                  "activityData":{  
-                    "data":{  
-                      "body":""
-                    }
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "associatedWords":{  
-        "data":[  
-          {  
-            "id":1589,
-            "language_id":1,
-            "word":"nankeri ngendi",
-            "alt":"",
-            "word_class":"Expression",
-            "english_word":"Good night",
-            "example":null,
-            "category":"expressions",
-            "comments":"",
-            "created_at":1489985508,
-            "updated_at":1508799287,
-            "deleted_at":0,
-            "recordings":{  
-              "data":{  
-                "female":{  
-                  "data":{  
-                    "id":6556,
-                    "title":"nankeri ngendi - female",
-                    "original_name":"nankeri ngendi - female",
-                    "name":"5244bdc8-a07d-4414-aa03-9681e6891d6b.wav",
-                    "type":"sound",
-                    "thumbnail":null,
-                    "speaker":null,
-                    "copyright":null,
-                    "notes":null,
-                    "size":"173.41kB",
-                    "download_link":null,
-                    "vimeoURL":null
-                  }
-                }
-              }
-            }
-          },
-          {  
-            "id":5085,
-            "language_id":1,
-            "word":"nguldi arndu",
-            "alt":null,
-            "word_class":"Expression",
-            "english_word":"Welcome (well-come)",
-            "example":null,
-            "category":"food, cooking, fire",
-            "comments":"",
-            "created_at":1489985508,
-            "updated_at":1508799361,
-            "deleted_at":0,
-            "image":{  
-              "data":{  
-                "id":10497,
-                "title":"100_2089",
-                "original_name":"100_2089",
-                "name":"d42452c1-f655-4a32-a34a-e0071d3f6369.jpg",
-                "type":"image",
-                "thumbnail":null,
-                "speaker":null,
-                "copyright":null,
-                "notes":null,
-                "size":0,
-                "download_link":null,
-                "vimeoURL":null
-              }
-            },
-            "recordings":{  
-              "data":{  
-                "female":{  
-                  "data":{  
-                    "id":6260,
-                    "title":"nguldi arndu - female",
-                    "original_name":"nguldi arndu - female",
-                    "name":"8178b25a-e282-4876-99b8-a12a51f11c4f.wav",
-                    "type":"sound",
-                    "thumbnail":null,
-                    "speaker":null,
-                    "copyright":null,
-                    "notes":null,
-                    "size":"133.88kB",
-                    "download_link":null,
-                    "vimeoURL":null
-                  }
-                }
-              }
-            }
-          }
-        ]
-      },
-      "tags":{  
-        "data":[  
-
-        ]
-      }
-    }
-  ]
-}
-```
-
-This endpoint 
-
-### HTTP Request
-
-`GET [API URL]/api/v3/topics`
-
-### Parameters
-
-Parameter | Type | Required | Example | Description
---------- | ---- | -------- | ------- | -----------
-topic      | int     | True    | `1` | 
-languageID      | int     | True    | `81` | 
-
 
 ## Dreaming stories
 
@@ -1051,11 +901,11 @@ postcode      | integer     | False    | `Millward` | Post code of current resid
 indigenous      | boolean     | False    | `false` | Are you a native Australian?
 
 
-# Social Media
+# Community Feed
 
-## Retrieve Social Media
+## Retrieve Community Feed
 
-This endpoint returns the latest social media for a language, in reverse (descending) time order.
+This endpoint returns the latest Community Feed for a language, in reverse (descending) time order.
 
 > On Success this API returns json like
 
@@ -1082,7 +932,7 @@ This endpoint returns the latest social media for a language, in reverse (descen
 
 ### HTTP Request
 
-`GET [API URL]/api/v3/social-media`
+`GET [API URL]/api/v3/community-feed`
 
 ### Headers
 
@@ -1095,3 +945,304 @@ Authorization | Bearer     | True    | `[User Token]` | This is the users API to
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
 languageID | integer | True | 1 | The ID of the language to retrieve social media for
+
+
+# Topics
+
+
+## Topics
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": 79,
+      "sort": 0,
+      "title": "Greeting people",
+      "description": "Greetings",
+      "teacher_notes": "",
+      "offline_size": "743.23MB",
+      "associatedWords": {
+        "data": [
+          {
+            "id": 1926,
+            "language_id": 1,
+            "word": "ngapi",
+            "alt": null,
+            "word_class": "Pronoun",
+            "english_word": "I (subject)",
+            "example": null,
+            "category": "personal pronouns",
+            "comments": "",
+            "created_at": 1489985508,
+            "updated_at": 1508799295,
+            "deleted_at": 0,
+            "recordings": {
+              "data": {
+                "female": {
+                  "data": {
+                    "id": 6458,
+                    "title": "ngapi - female",
+                    "original_name": "ngapi - female",
+                    "name": "8a7cdd3a-b381-4201-8228-0e6ceaf024d2.wav",
+                    "type": "sound",
+                    "thumbnail": null,
+                    "speaker": null,
+                    "copyright": null,
+                    "notes": null,
+                    "size": "129.71kB",
+                    "download_link": null,
+                    "vimeoURL": null
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 3534,
+            "language_id": 1,
+            "word": "nakan",
+            "alt": "",
+            "word_class": "Verb (trans)",
+            "english_word": "See (you) later in the future",
+            "example": null,
+            "category": "senses",
+            "comments": "",
+            "created_at": 1489985508,
+            "updated_at": 1508799334,
+            "deleted_at": 0,
+            "recordings": {
+              "data": {
+                "female": {
+                  "data": {
+                    "id": 6774,
+                    "title": "nakan - female",
+                    "original_name": "nakan - female",
+                    "name": "604fc11e-3a67-46c7-8b3e-76340b694f13.wav",
+                    "type": "sound",
+                    "thumbnail": null,
+                    "speaker": null,
+                    "copyright": null,
+                    "notes": null,
+                    "size": "118.58kB",
+                    "download_link": null,
+                    "vimeoURL": null
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 4596,
+            "language_id": 1,
+            "word": "nginti",
+            "alt": "",
+            "word_class": "Pronoun",
+            "english_word": "Thou, you (singular)",
+            "example": null,
+            "category": "personal pronouns",
+            "comments": "",
+            "created_at": 1489985508,
+            "updated_at": 1508799353,
+            "deleted_at": 0,
+            "recordings": {
+              "data": {
+                "female": {
+                  "data": {
+                    "id": 6346,
+                    "title": "nginti - female",
+                    "original_name": "nginti - female",
+                    "name": "fdb3cf97-e709-4e14-a8c9-4a859680cabf.wav",
+                    "type": "sound",
+                    "thumbnail": null,
+                    "speaker": null,
+                    "copyright": null,
+                    "notes": null,
+                    "size": "132.57kB",
+                    "download_link": null,
+                    "vimeoURL": null
+                  }
+                }
+              }
+            }
+          },
+          ...
+```
+
+This endpoint gets a list of topics available to a user.
+
+### HTTP Request
+
+`GET [API URL]/api/v3/topics`
+
+### Headers
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+Authorization | Bearer     | True    | `[User Token]` | This is the users API token.
+
+### GET Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+languageID      | int     | True    | `1` | 
+searchTerm      | string     | false    | `Greeting People` | 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Topic Resources
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": 11383,
+      "title": "Number 2 two",
+      "original_name": 2,
+      "name": "a490468c-6cda-406d-9b7f-2b59209474d7.jpg",
+      "type": "image",
+      "thumbnail": null,
+      "speaker": "",
+      "copyright": "",
+      "notes": "",
+      "size": "11.27kB",
+      "download_link": null,
+      "vimeoURL": null
+    },
+    {
+      "id": 11409,
+      "title": "Number 17 seventeen",
+      "original_name": 17,
+      "name": "e9e9b2c8-dcad-4feb-865b-05ca586972f3.jpg",
+      "type": "image",
+      "thumbnail": null,
+      "speaker": "",
+      "copyright": "",
+      "notes": "",
+      "size": "11.06kB",
+      "download_link": null,
+      "vimeoURL": null
+    },
+    {
+      "id": 11387,
+      "title": "number 3 three",
+      "original_name": 3,
+      "name": "903bed1e-aaa9-4174-a568-fa7df85becb3.jpg",
+      "type": "image",
+      "thumbnail": null,
+      "speaker": "",
+      "copyright": "",
+      "notes": "",
+      "size": "12.53kB",
+      "download_link": null,
+      "vimeoURL": null
+    },
+    ...
+```
+
+This endpoint gets an individual topics list of resources
+
+### HTTP Request
+
+`GET [API URL]/api/v3/topics/resources`
+
+### Headers
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+Authorization | Bearer     | True    | `[User Token]` | This is the users API token.
+
+### GET Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+topicid      | int     | True    | `81` | 
+languageID      | int     | True    | `1` | 
+
+
+
+
+
+## Add Topic To "My Topics"
+
+> The API returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": 68,
+    "name": "My topics",
+    "year_level": null,
+    "join_code": "9ff-4ee",
+    "topic": {
+      "data": [
+        {
+          "id": 183,
+          "sort": 0,
+          "title": "46 Playing games",
+          "description": "",
+          "teacher_notes": "",
+          "offline_size": "13.91MB",
+          "sequences": {
+            "data": []
+          },
+          "associatedWords": {
+            "data": []
+          },
+          "tags": {
+            "data": []
+          }
+        }
+      ]
+    },
+    "teacher": {
+      "data": {
+        "id": 1,
+        "title": "Pope",
+        "first_name": "Jason",
+        "last_name": "M",
+        "email": "email@domain.com",
+        "dob": "1902-11-30",
+        "gender": "male",
+        "postcode": 0,
+        "indigenous": 0,
+        "role": ""
+      }
+    }
+  }
+}
+```
+
+This endpoint gets an individual topics list of resources
+
+### HTTP Request
+
+`POST [API URL]/api/v3/topics/join`
+
+### Headers
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+Authorization | Bearer     | True    | `[User Token]` | This is the users API token.
+
+### GET Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+topicid      | int     | True    | `79` | 
+languageID      | int     | True    | `1` | 
