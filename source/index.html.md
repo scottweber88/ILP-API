@@ -1175,9 +1175,6 @@ topicid      | int     | True    | `81` |
 languageID      | int     | True    | `1` | 
 
 
-
-
-
 ## Add Topic To "My Topics"
 
 > The API returns JSON structured like this:
@@ -1246,3 +1243,68 @@ Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
 topicid      | int     | True    | `79` | 
 languageID      | int     | True    | `1` | 
+
+
+
+
+
+
+# Users online
+
+> The API returns JSON structured like this:
+
+```json
+{
+	"status": "success",
+	"message": "168 language warrior(s) online now"
+}
+```
+
+This endpoint returns a count of the currently active users.
+
+### HTTP Request
+
+`POST [API URL]/api/v3/users/online`
+
+### Headers
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+Authorization | Bearer     | True    | `[User Token]` | This is the users API token.
+
+### GET Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+languageID      | int     | True    | `1` | 
+
+
+# Users online
+
+> The API returns JSON structured like this:
+
+```json
+{
+	"status": "failure",
+	"message": "This email is unavailable."
+}
+```
+
+```json
+{
+	"status": "success",
+	"message": "This email is available."
+}
+```
+
+This endpoint checks to see if an email has been registered in the system before.
+
+### HTTP Request
+
+`POST [API URL]/api/v3/auth/checkEmail`
+
+### POST Parameters
+
+Parameter | Type | Required | Example | Description
+--------- | ---- | -------- | ------- | -----------
+email      | string     | True    | `email@domain.com` | 
