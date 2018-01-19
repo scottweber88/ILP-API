@@ -920,11 +920,18 @@ This endpoint returns the latest Community Feed for a language, in reverse (desc
         "ourlanguagesmatter"
       ],
       "id": 1,
-      "image": null,
+      "image": "https://pbs.twimg.com/media/DTW6c6VXUAI5PmS.jpg",
       "platform_name": "Twitter",
       "published": "2017-11-28 04:23:47",
       "text": "RT @Mrs_Tobias9: @BangorPS @craigsnudden #ourlanguagesmatter #Kooriartexpressions #celebrate https://t.co/Kont0HVjJj",
-      "title": null
+      "title": null,
+      "links": [
+        {
+          "url": "https://t.co/Vl2co1Mmz6",
+          "startIndex": 41,
+          "endIndex": 61
+        }
+      ]
     }
   ]
 }
@@ -945,6 +952,8 @@ Authorization | Bearer     | True    | `[User Token]` | This is the users API to
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
 languageID | integer | True | 1 | The ID of the language to retrieve social media for
+beforeTimestamp | long | False | 1515760272 | Return only items published before this unix epoch timestamp. Use this to load additional items after the first page
+afterTimestamp | long | False | 1516365072 | Return only items published after this unix epoch timestamp. Use this to check for additional items after the most recent previously loaded
 
 # Topics
 
