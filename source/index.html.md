@@ -1171,7 +1171,7 @@ Authorization | Bearer     | True    | `[User Token]` | This is the users API to
 
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
-topicid      | int     | True    | `81` | 
+topicID      | int     | True    | `81` | 
 languageID      | int     | True    | `1` | 
 
 
@@ -1225,7 +1225,7 @@ languageID      | int     | True    | `1` |
 }
 ```
 
-This endpoint gets an individual topics list of resources
+This endpoint allows a user to add a topic to his or her classroom
 
 ### HTTP Request
 
@@ -1241,7 +1241,7 @@ Authorization | Bearer     | True    | `[User Token]` | This is the users API to
 
 Parameter | Type | Required | Example | Description
 --------- | ---- | -------- | ------- | -----------
-topicid      | int     | True    | `79` | 
+topicID      | int     | True    | `79` | 
 languageID      | int     | True    | `1` | 
 
 
